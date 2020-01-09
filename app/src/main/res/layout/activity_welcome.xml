@@ -9,7 +9,7 @@
     android:paddingLeft="32dp"
     android:paddingBottom="32dp"
     android:paddingTop="24dp"
-    tools:context=".MainActivity">
+    tools:context=".WelcomeActivity">
 
     <TextView
         android:id="@+id/welcome_name"
