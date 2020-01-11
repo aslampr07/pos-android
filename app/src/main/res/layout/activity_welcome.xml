@@ -9,7 +9,7 @@
     android:paddingLeft="32dp"
     android:paddingBottom="32dp"
     android:paddingTop="24dp"
-    tools:context=".MainActivity">
+    tools:context=".WelcomeActivity">
 
     <TextView
         android:id="@+id/welcome_name"
@@ -58,6 +58,7 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         android:background="@drawable/bg_button_solid"
+        android:onClick="buttonClick"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/button_welcome" />
 
