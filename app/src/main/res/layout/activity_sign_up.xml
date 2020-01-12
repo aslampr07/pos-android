@@ -8,7 +8,7 @@
     tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/welcome_name"
+        android:id="@+id/SignUpAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
@@ -25,24 +25,24 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="32dp"
         android:src="@drawable/ic_info"
-        app:layout_constraintBottom_toBottomOf="@id/welcome_name"
+        app:layout_constraintBottom_toBottomOf="@id/SignUpAppName"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/welcome_name" />
+        app:layout_constraintTop_toTopOf="@id/SignUpAppName" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="32dp"
-        app:layout_constraintBottom_toTopOf="@id/signup_button"
-        app:layout_constraintTop_toBottomOf="@id/welcome_name">
+        app:layout_constraintBottom_toTopOf="@id/SignUpSignUpButton"
+        app:layout_constraintTop_toBottomOf="@id/SignUpAppName">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Sign Up"
+            android:text="@string/sign_up"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="36sp" />
@@ -51,8 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_button_stroked"
-            android:hint="Username"
+            android:background="@drawable/bg_stroke_round_white"
+            android:hint="@string/username"
             android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -62,8 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_button_stroked"
-            android:hint="Phone"
+            android:background="@drawable/bg_stroke_round_white"
+            android:hint="@string/phone"
             android:inputType="phone"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -73,8 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_button_stroked"
-            android:hint="Email"
+            android:background="@drawable/bg_stroke_round_white"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -84,8 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_button_stroked"
-            android:hint="Password"
+            android:background="@drawable/bg_stroke_round_white"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -93,11 +93,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/signup_button"
+        android:id="@+id/SignUpSignUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -6,4 +6,9 @@
     <string name="kadbyte">KadByte</string>
     <string name="manage">Manage</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
 </resources>
