@@ -12,7 +12,7 @@
     tools:context=".WelcomeActivity">
 
     <TextView
-        android:id="@+id/welcome_name"
+        android:id="@+id/WelcomeAppNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/kadbyte"
@@ -26,8 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_info"
-        app:layout_constraintTop_toTopOf="@id/welcome_name"
-        app:layout_constraintBottom_toBottomOf="@id/welcome_name"
+        app:layout_constraintTop_toTopOf="@id/WelcomeAppNameView"
+        app:layout_constraintBottom_toBottomOf="@id/WelcomeAppNameView"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
@@ -38,20 +38,20 @@
         android:textSize="28sp"
         android:layout_marginBottom="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/description_welcome"
+        app:layout_constraintBottom_toTopOf="@id/WelcomeDescriptionView"
         />
     <TextView
-        android:id="@+id/description_welcome"
+        android:id="@+id/WelcomeDescriptionView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/welcome_description"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/WelcomeLoginbutton"/>
+        app:layout_constraintBottom_toTopOf="@id/WelcomeLoginButton"/>
 
     <Button
-        android:id="@+id/WelcomeLoginbutton"
+        android:id="@+id/WelcomeLoginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/log_in"
@@ -60,10 +60,10 @@
         android:background="@drawable/bg_button_solid"
         android:onClick="buttonClick"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/button_signup" />
+        app:layout_constraintBottom_toTopOf="@id/WelcomeSignUpButton" />
 
     <Button
-        android:id="@+id/button_signup"
+        android:id="@+id/WelcomeSignUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
