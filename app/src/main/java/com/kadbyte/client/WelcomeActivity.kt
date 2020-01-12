@@ -14,11 +14,11 @@ class WelcomeActivity : AppCompatActivity() {
 
     fun buttonClick(view: View){
         when(view.id){
-            R.id.WelcomeLoginbutton -> {
+            R.id.WelcomeLoginButton -> {
                 val i = Intent(this, LoginActivity::class.java)
                 startActivity(i)
             }
-            R.id.button_signup -> {
+            R.id.WelcomeSignUpButton -> {
                 val i = Intent(this, SignUpActivity::class.java)
                 startActivity(i)
             }
