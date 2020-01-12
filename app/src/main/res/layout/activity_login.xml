@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Welcome Back"
+            android:text="@string/welcome_back"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="36sp" />
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/bg_button_stroked"
-            android:hint="Username"
+            android:hint="@string/username"
             android:inputType="textEmailAddress"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/bg_button_stroked"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="16dp"
             android:textColor="#ffffff"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_button_solid"
-                android:text="Log in" />
+                android:text="@string/log_in" />
 
             <View
                 android:layout_width="0dp"
