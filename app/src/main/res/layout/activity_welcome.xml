@@ -57,7 +57,7 @@
         android:text="@string/log_in"
         android:textAllCaps="false"
         android:textSize="16sp"
-        android:background="@drawable/bg_button_solid"
+        android:background="@drawable/bg_soild_round_white"
         android:onClick="buttonClick"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/WelcomeSignUpButton" />
@@ -70,7 +70,7 @@
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="16sp"
-        android:background="@drawable/bg_button_stroked"
+        android:background="@drawable/bg_stroke_round_white"
         android:onClick="buttonClick"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
