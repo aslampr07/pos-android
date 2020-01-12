@@ -60,10 +60,10 @@
         android:background="@drawable/bg_button_solid"
         android:onClick="buttonClick"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/button_welcome" />
+        app:layout_constraintBottom_toTopOf="@id/button_signup" />
 
     <Button
-        android:id="@+id/button_welcome"
+        android:id="@+id/button_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
@@ -71,6 +71,7 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         android:background="@drawable/bg_button_stroked"
+        android:onClick="buttonClick"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

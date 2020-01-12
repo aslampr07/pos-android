@@ -18,6 +18,10 @@ class WelcomeActivity : AppCompatActivity() {
                 val i = Intent(this, LoginActivity::class.java)
                 startActivity(i)
             }
+            R.id.button_signup -> {
+                val i = Intent(this, SignUpActivity::class.java)
+                startActivity(i)
+            }
         }
     }
 }
