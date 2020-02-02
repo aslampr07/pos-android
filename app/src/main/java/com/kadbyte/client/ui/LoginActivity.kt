@@ -1,7 +1,8 @@
-package com.kadbyte.client
+package com.kadbyte.client.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.kadbyte.client.R
 
 class LoginActivity : AppCompatActivity() {
 
