@@ -74,8 +74,18 @@ class SignUpViewModel @Inject constructor(
                     } else {
                         val x = deserialize.fromJson(response.errorBody()?.string())
                         if (x != null) {
-                            for(item in x){
-                                Log.v("this", item.message)
+                            for (item in x) {
+                                when (item.code) {
+                                    10001 -> {
+                                        when (item.field) {
+                                            "username" -> usernameError.postValue("Username already exist")
+                                            "email" -> emailError.postValue("Email already exist")
+                                            "phone" -> phoneError.postValue("Phone already exist")
+                                        }
+                                    }
+                                    10004 -> passwordError.postValue("Password must have at least 6 characters")
+                                    10009 -> emailError.postValue("Email is invalid")
+                                }
                             }
                         }
                     }

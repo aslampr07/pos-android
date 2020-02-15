@@ -5,5 +5,6 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceError(
     val code: Int,
-    val field: String, val message: String
+    val field: String?,
+    val message: String
 )

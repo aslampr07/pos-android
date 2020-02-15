@@ -17,7 +17,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun getService(): KadByteService {
+    fun provideService(): KadByteService {
 
         val logger = HttpLoggingInterceptor()
         logger.level = HttpLoggingInterceptor.Level.BODY
@@ -35,7 +35,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun deserialize(): JsonAdapter<List<ServiceError>> {
+    fun provideAdapter(): JsonAdapter<List<ServiceError>> {
         val moshi = Moshi.Builder().build()
         val type = Types.newParameterizedType(List::class.java, ServiceError::class.java)
         return moshi.adapter(type)
