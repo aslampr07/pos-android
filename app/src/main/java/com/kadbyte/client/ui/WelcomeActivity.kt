@@ -10,7 +10,8 @@ class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        //setContentView(R.layout.activity_welcome)
+        startActivity(Intent(this, ItemAddActivity::class.java))
     }
 
     fun buttonClick(view: View){
