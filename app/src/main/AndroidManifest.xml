@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ItemAddActivity"></activity>
+        <activity
+            android:name=".ui.ItemAddActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".ui.SignUpActivity" />
         <activity
             android:name=".ui.LoginActivity"
