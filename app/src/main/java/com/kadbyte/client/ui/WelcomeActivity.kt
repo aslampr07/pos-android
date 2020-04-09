@@ -27,3 +27,4 @@ class WelcomeActivity : AppCompatActivity() {
         }
     }
 }
+

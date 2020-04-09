@@ -28,33 +28,41 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <HorizontalScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/ImageAddScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:scrollbars="none"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/ItemAddView">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
+
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ItemAddImageList"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_dashed"
-                android:padding="50dp"
                 android:onClick="tempClick"
-                android:src="@drawable/ic_image_add" />
-        </LinearLayout>
+                android:padding="50dp"
+                android:src="@drawable/ic_image_add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ItemAddImageList"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
     <LinearLayout
@@ -65,6 +73,7 @@
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ImageAddScroll">
+
 
         <EditText
             android:layout_width="match_parent"
