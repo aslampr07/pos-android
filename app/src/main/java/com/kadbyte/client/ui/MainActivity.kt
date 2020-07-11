@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         if (preferences.contains("refreshToken")) {
             CoroutineScope(IO).launch {
                 val response = service.profile()
+                val x = service.getItemList()
                 if (response.isSuccessful) {
                     if (response.body()?.stores?.isNotEmpty()!!) {
                         startActivity(Intent(this@MainActivity, HomeActivity::class.java))

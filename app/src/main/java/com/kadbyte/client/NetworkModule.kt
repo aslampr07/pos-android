@@ -50,7 +50,7 @@ object NetworkModule {
             .addInterceptor(interceptor)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://api.kadbyte.com")
+            .baseUrl("http://192.168.0.109:8000")
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client.build())
             .build()

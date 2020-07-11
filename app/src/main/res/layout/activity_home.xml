@@ -14,6 +14,7 @@
         tools:context=".ui.HomeActivity">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:elevation="4dp"
@@ -49,12 +50,20 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainItemList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:src="@drawable/ic_add_white"
             app:fabSize="auto"
+            android:onClick="actionButtonClick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 

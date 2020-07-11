@@ -19,6 +19,7 @@ class AuthenticationInterceptor @Inject constructor(
 
     init {
         Log.v(TAG, "Constructor invoked")
+        mutableListOf<String>()
     }
 
 

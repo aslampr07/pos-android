@@ -21,7 +21,8 @@ class LoginActivity : AppCompatActivity() {
 
         val binding: ActivityLoginBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_login)
-        
+
+        binding.lifecycleOwner = this
 
         binding.login = viewModel
 
@@ -34,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         })
 
         viewModel.isSignInSuccess.observe(this, Observer { isSuccess ->
-            if(isSuccess){
+            if (isSuccess) {
                 val i = Intent(this, MainActivity::class.java)
                 startActivity(i)
             }
