@@ -2,7 +2,6 @@ package com.kadbyte.client
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.widget.Toast
 import com.kadbyte.client.model.ServiceError
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
@@ -16,10 +15,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
-import javax.inject.Inject
-import javax.inject.Singleton
-import kotlin.coroutines.Continuation
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -46,11 +41,11 @@ object NetworkModule {
             level = HttpLoggingInterceptor.Level.BODY
         }
         val client = OkHttpClient.Builder()
-            .addInterceptor(logger)
+            //.addInterceptor(logger)
             .addInterceptor(interceptor)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.109:8000")
+            .baseUrl("http://api.kadbyte.com")
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client.build())
             .build()

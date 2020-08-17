@@ -34,8 +34,7 @@
         <activity android:name=".ui.LoginActivity" />
         <activity
             android:name=".ui.WelcomeActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

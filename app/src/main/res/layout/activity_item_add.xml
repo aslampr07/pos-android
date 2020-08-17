@@ -17,10 +17,12 @@
         android:paddingTop="16dp"
         tools:context=".ui.ItemAddActivity">
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:background="@null"
+            android:onClick="backButtonClick"
             android:src="@drawable/ic_back"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,91 +39,79 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/ImageAddScroll"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ItemAddImageList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="146dp"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/ItemAddView">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            android:paddingBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ItemAddView" />
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/ItemAddImageList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_dashed"
-                    android:onClick="tempClick"
-                    android:padding="50dp"
-                    android:src="@drawable/ic_image_add"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/ItemAddImageList"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="16dp"
             app:layout_constraintBottom_toTopOf="@id/saveButton"
-            app:layout_constraintTop_toBottomOf="@id/ImageAddScroll">
+            app:layout_constraintTop_toBottomOf="@id/ItemAddImageList">
 
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_stroke_round_blue"
-                android:hint="Name"
-                android:inputType="textAutoComplete"
-                android:padding="16dp"
-                android:text="@={viewmodel.itemName}" />
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_stroke_round_blue"
-                android:hint="Selling Price"
-                android:text="@={viewmodel.itemPrice}"
-                android:inputType="numberDecimal"
-                android:padding="16dp" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_stroke_round_blue"
-                android:hint="Alias"
-                android:inputType="text"
-                android:padding="16dp"
-                android:text="@={viewmodel.itemAlias}" />
-        </LinearLayout>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_stroke_round_blue"
+                    android:hint="Name"
+                    android:inputType="textAutoComplete"
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemName}" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_stroke_round_blue"
+                    android:hint="Selling Price"
+                    android:inputType="numberDecimal"
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemPrice}" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_stroke_round_blue"
+                    android:hint="Alias"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemAlias}" />
+
+                <ImageView
+                    android:id="@+id/testImage"
+                    android:scaleType="centerCrop"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Save"
             android:background="@color/colorAccent"
-            android:textColor="@color/white"
             android:onClick="@{()-> viewmodel.saveClick()}"
+            android:text="Save"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
 
 

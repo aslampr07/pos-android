@@ -2,16 +2,14 @@ package com.kadbyte.client.ui
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.RingtoneManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.kadbyte.client.KadByteService
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.coroutineContext
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

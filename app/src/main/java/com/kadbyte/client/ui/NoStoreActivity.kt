@@ -1,7 +1,7 @@
 package com.kadbyte.client.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.kadbyte.client.R
 
 class NoStoreActivity : AppCompatActivity() {

@@ -1,11 +1,12 @@
 package com.kadbyte.client
 
+import android.os.TestLooperManager
+import com.kadbyte.client.model.ImageUploadResponse
 import com.kadbyte.client.model.Item
 import com.kadbyte.client.model.Profile
+import okhttp3.MultipartBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface KadByteService {
 
@@ -17,4 +18,8 @@ interface KadByteService {
 
     @POST("/api/item")
     suspend fun insertItem(@Body item: Item): Response<Item>
+
+    @Multipart
+    @POST("/api/item/image/upload")
+    suspend fun uploadImage(@Part picture: MultipartBody.Part): Response<ImageUploadResponse>
 }
