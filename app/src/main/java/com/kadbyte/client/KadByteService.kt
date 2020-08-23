@@ -1,6 +1,5 @@
 package com.kadbyte.client
 
-import android.os.TestLooperManager
 import com.kadbyte.client.model.ImageUploadResponse
 import com.kadbyte.client.model.Item
 import com.kadbyte.client.model.Profile

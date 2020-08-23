@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.kadbyte.client.R
 import com.kadbyte.client.databinding.ImageCardItemBinding

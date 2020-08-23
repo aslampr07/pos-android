@@ -2,8 +2,6 @@ package com.kadbyte.client.ui
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -23,12 +21,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.util.*
-import kotlin.coroutines.coroutineContext
 
 @AndroidEntryPoint
 class ItemAddActivity : AppCompatActivity(), AddPhotoDialog.FragmentCallback,
