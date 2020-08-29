@@ -1,13 +1,17 @@
 package com.kadbyte.client.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kadbyte.client.R
 import com.kadbyte.client.adapter.HomeItemListAdapter
 import com.kadbyte.client.databinding.FragmentItemListBinding
 import com.kadbyte.client.viewmodel.HomeViewModel
@@ -26,17 +30,21 @@ class ItemListFragment : Fragment() {
     ): View? {
         _binding = FragmentItemListBinding.inflate(inflater, container, false)
 
-        binding.mainItemList.layoutManager = LinearLayoutManager(context);
+        binding.addItemFab.setOnClickListener {
+            findNavController().navigate(R.id.action_itemListFragment_to_itemAddFragment)
+        }
 
+        binding.mainItemList.layoutManager = LinearLayoutManager(context);
         model.itemList.observe( viewLifecycleOwner, Observer { list->
             binding.mainItemList.adapter = HomeItemListAdapter(list)
         })
-
         model.getItemList()
 
         val view = binding.root;
+
         return view
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

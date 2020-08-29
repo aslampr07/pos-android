@@ -9,11 +9,8 @@ import javax.inject.Singleton
 @Singleton
 class ItemRepository @Inject constructor(private val service: KadByteService) {
 
-    init {
-        Log.v("SCOPETEST", "initialized")
-    }
 
-    private var itemList: MutableList<Item>? = null;
+    private var itemList: MutableList<Item>? = null
 
     suspend fun getItemList(): List<Item>? {
         if (itemList == null) {

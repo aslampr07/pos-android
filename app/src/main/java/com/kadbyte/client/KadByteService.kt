@@ -1,5 +1,6 @@
 package com.kadbyte.client
 
+import com.kadbyte.client.model.Category
 import com.kadbyte.client.model.ImageUploadResponse
 import com.kadbyte.client.model.Item
 import com.kadbyte.client.model.Profile
@@ -21,4 +22,7 @@ interface KadByteService {
     @Multipart
     @POST("/api/item/image/upload")
     suspend fun uploadImage(@Part picture: MultipartBody.Part): Response<ImageUploadResponse>
+
+    @GET("/api/category/hcstore01/public")
+    suspend fun getCategoryList(): Response<List<Category>>
 }

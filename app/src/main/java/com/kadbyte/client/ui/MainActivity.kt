@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     if (response.body()?.stores?.isNotEmpty()!!) {
                         startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                        finish()
                     } else {
                         startActivity(Intent(this@MainActivity, NoStoreActivity::class.java))
                         finish()

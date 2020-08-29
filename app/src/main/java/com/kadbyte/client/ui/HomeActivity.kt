@@ -3,6 +3,10 @@ package com.kadbyte.client.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.kadbyte.client.R
 import com.kadbyte.client.databinding.ActivityHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +22,21 @@ class HomeActivity : AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_home)
 
         binding.lifecycleOwner = this
+
+        setSupportActionBar(binding.mainToolBar)
+
+        //navigation Controller
+        val navController = findNavController(R.id.MainNavHost)
+
+        //To configure the app bar
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.orderListFragment, R.id.itemListFragment, R.id.categoryListFragment),
+            binding.mainDrawer
+        )
+
+        //Setting up the app bar and the navigation drawer, to display the name and navigate automatically
+        binding.mainToolBar.setupWithNavController(navController, appBarConfiguration)
+        binding.mainNavigationView.setupWithNavController(navController)
     }
 
 }

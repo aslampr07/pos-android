@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Home"/>
-    <item android:title="Items"/>
-    <item android:title="Categories"/>
+    <item
+        android:id="@+id/orderListFragment"
+        android:icon="@drawable/ic_order"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/itemListFragment"
+        android:icon="@drawable/ic_list"
+        android:title="@string/items" />
+    <item
+        android:id="@+id/categoryListFragment"
+        android:icon="@drawable/ic__category"
+        android:title="@string/categories" />
 </menu>
