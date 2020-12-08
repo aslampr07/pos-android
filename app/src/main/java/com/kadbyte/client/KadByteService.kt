@@ -25,4 +25,7 @@ interface KadByteService {
 
     @GET("/api/category/hcstore01/public")
     suspend fun getCategoryList(): Response<List<Category>>
+
+    @POST("/api/category")
+    suspend fun createCategory(@Body category: Category): Response<Category>
 }

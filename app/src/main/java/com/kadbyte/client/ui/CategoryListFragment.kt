@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kadbyte.client.R
 import com.kadbyte.client.adapter.CategoryListAdapter
@@ -28,17 +30,32 @@ class CategoryListFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_category_list, container, false)
 
+        view.addCategoryFab.setOnClickListener {
+            findNavController().navigate(R.id.addCategoryDialog)
+        }
+
         view.categoryList.layoutManager = LinearLayoutManager(context)
         val adapter = CategoryListAdapter(model.itemList)
         view.categoryList.adapter = adapter
-
         model.changedEvent.observe(viewLifecycleOwner, Observer {
             adapter.notifyDataSetChanged()
         })
-
         model.getCategoryList()
 
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Boolean>("isDone")
+            ?.observe(viewLifecycleOwner, Observer {isSuccess ->
+                if(isSuccess){
+                    adapter.notifyDataSetChanged()
+                }
+            })
+
+        
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v("RESUME", "Resume called")
     }
 
 }

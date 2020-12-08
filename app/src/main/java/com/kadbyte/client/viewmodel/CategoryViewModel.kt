@@ -16,11 +16,21 @@ class CategoryViewModel @ViewModelInject constructor(private val repository: Cat
 
     val changedEvent = MutableLiveData<Boolean>()
 
+    val itemInsertSuccess = MutableLiveData<Boolean>()
+
     fun getCategoryList() {
         viewModelScope.launch(Dispatchers.IO) {
             itemList.clear()
             itemList.addAll(repository.getCategoryList()!!)
             changedEvent.postValue(changedEvent.value)
+        }
+    }
+
+    fun createCategory(name: String) {
+        if (name.isNotBlank()) {
+            viewModelScope.launch {
+                itemInsertSuccess.postValue(repository.insertItem(Category("", name)))
+            }
         }
     }
 

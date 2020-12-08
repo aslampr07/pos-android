@@ -28,7 +28,7 @@ object NetworkModule {
 
         val client = OkHttpClient.Builder().addInterceptor(logger)
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://api.kadbyte.com")
+            .baseUrl("https://api.kadbyte.com")
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client.build())
             .build()
@@ -45,7 +45,7 @@ object NetworkModule {
             .addInterceptor(interceptor)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://api.kadbyte.com")
+            .baseUrl("https://api.kadbyte.com")
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client.build())
             .build()
