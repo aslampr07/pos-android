@@ -1,9 +1,9 @@
 package com.kadbyte.client.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.kadbyte.client.R
 
 class WelcomeActivity : AppCompatActivity() {
@@ -26,3 +26,4 @@ class WelcomeActivity : AppCompatActivity() {
         }
     }
 }
+

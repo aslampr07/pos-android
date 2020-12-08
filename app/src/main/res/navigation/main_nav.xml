@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/orderListFragment">
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.kadbyte.client.OrderListFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_order_list" />
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.kadbyte.client.ui.ItemListFragment"
+        android:label="@string/items">
+        <action
+            android:id="@+id/action_itemListFragment_to_itemAddFragment"
+            app:destination="@id/itemAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemAddFragment"
+        android:name="com.kadbyte.client.ui.ItemAddFragment"
+        android:label="Create Item"
+        tools:layout="@layout/fragment_item_add" />
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.kadbyte.client.ui.CategoryListFragment"
+        android:label="@string/categories"
+        tools:layout="@layout/fragment_category_list" >
+        <action
+            android:id="@+id/action_categoryListFragment_to_addCategoryDialog"
+            app:destination="@id/addCategoryDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/addCategoryDialog"
+        android:name="com.kadbyte.client.ui.dialog.AddCategoryDialog"
+        android:label="AddCategoryDialog" />
+</navigation>
