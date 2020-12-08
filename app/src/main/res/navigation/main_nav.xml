@@ -26,7 +26,7 @@
         android:id="@+id/categoryListFragment"
         android:name="com.kadbyte.client.ui.CategoryListFragment"
         android:label="@string/categories"
-        tools:layout="@layout/fragment_category_list" >
+        tools:layout="@layout/fragment_category_list">
         <action
             android:id="@+id/action_categoryListFragment_to_addCategoryDialog"
             app:destination="@id/addCategoryDialog" />

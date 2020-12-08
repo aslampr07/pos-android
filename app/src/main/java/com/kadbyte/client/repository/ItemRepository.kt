@@ -1,6 +1,5 @@
 package com.kadbyte.client.repository
 
-import android.util.Log
 import com.kadbyte.client.KadByteService
 import com.kadbyte.client.model.Item
 import javax.inject.Inject

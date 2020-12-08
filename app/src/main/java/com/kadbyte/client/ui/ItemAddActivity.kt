@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +38,7 @@ class ItemAddActivity : AppCompatActivity(), AddPhotoDialog.FragmentCallback,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
-            DataBindingUtil.setContentView<ActivityItemAddBinding>(this, R.layout.activity_item_add)
+            DataBindingUtil.setContentView(this, R.layout.activity_item_add)
 
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
@@ -48,7 +47,6 @@ class ItemAddActivity : AppCompatActivity(), AddPhotoDialog.FragmentCallback,
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.ItemAddImageList.adapter = AddItemImageAdapter(this, viewModel.imageList)
 
-        Log.v("Test", "TEST")
     }
 
     fun backButtonClick(view: View) {

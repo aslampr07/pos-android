@@ -1,11 +1,9 @@
 package com.kadbyte.client.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.kadbyte.client.R
 import com.kadbyte.client.databinding.LayoutCategoryItemBinding
 import com.kadbyte.client.model.Category
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.kadbyte.client.R
 import com.kadbyte.client.databinding.ActivityHomeBinding
@@ -37,6 +36,7 @@ class HomeActivity : AppCompatActivity() {
         //Setting up the app bar and the navigation drawer, to display the name and navigate automatically
         binding.mainToolBar.setupWithNavController(navController, appBarConfiguration)
         binding.mainNavigationView.setupWithNavController(navController)
+
     }
 
 }
