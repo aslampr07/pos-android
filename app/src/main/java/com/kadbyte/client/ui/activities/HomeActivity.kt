@@ -1,4 +1,4 @@
-package com.kadbyte.client.ui
+package com.kadbyte.client.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

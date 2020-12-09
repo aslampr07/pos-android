@@ -10,7 +10,7 @@
         tools:layout="@layout/fragment_order_list" />
     <fragment
         android:id="@+id/itemListFragment"
-        android:name="com.kadbyte.client.ui.ItemListFragment"
+        android:name="com.kadbyte.client.ui.fragments.ItemListFragment"
         android:label="@string/items">
         <action
             android:id="@+id/action_itemListFragment_to_itemAddFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemAddFragment"
-        android:name="com.kadbyte.client.ui.ItemAddFragment"
+        android:name="com.kadbyte.client.ui.fragments.ItemAddFragment"
         android:label="Create Item"
         tools:layout="@layout/fragment_item_add" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/categoryListFragment"
-        android:name="com.kadbyte.client.ui.CategoryListFragment"
+        android:name="com.kadbyte.client.ui.fragments.CategoryListFragment"
         android:label="@string/categories"
         tools:layout="@layout/fragment_category_list">
         <action
@@ -36,10 +36,10 @@
     </fragment>
     <dialog
         android:id="@+id/addCategoryDialog"
-        android:name="com.kadbyte.client.ui.dialog.AddCategoryDialog"
+        android:name="com.kadbyte.client.ui.dialogs.AddCategoryDialog"
         android:label="AddCategoryDialog" />
     <dialog
         android:id="@+id/addVendorDialog"
-        android:name="com.kadbyte.client.ui.dialog.AddVendorDialog"
+        android:name="com.kadbyte.client.ui.dialogs.AddVendorDialog"
         android:label="AddVendorDialog" />
 </navigation>

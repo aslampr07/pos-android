@@ -1,4 +1,4 @@
-package com.kadbyte.client.ui
+package com.kadbyte.client.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

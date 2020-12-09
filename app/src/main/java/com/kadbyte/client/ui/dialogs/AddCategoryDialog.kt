@@ -1,4 +1,4 @@
-package com.kadbyte.client.ui.dialog
+package com.kadbyte.client.ui.dialogs
 
 import android.app.ActionBar
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.kadbyte.client.R
 import com.kadbyte.client.viewmodel.CategoryViewModel

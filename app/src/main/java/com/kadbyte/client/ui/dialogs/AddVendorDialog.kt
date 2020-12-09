@@ -1,4 +1,4 @@
-package com.kadbyte.client.ui.dialog
+package com.kadbyte.client.ui.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater
