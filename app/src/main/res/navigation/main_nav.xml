@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_nav"
     app:startDestination="@id/orderListFragment">
     <fragment
         android:id="@+id/orderListFragment"
@@ -21,7 +20,11 @@
         android:id="@+id/itemAddFragment"
         android:name="com.kadbyte.client.ui.ItemAddFragment"
         android:label="Create Item"
-        tools:layout="@layout/fragment_item_add" />
+        tools:layout="@layout/fragment_item_add" >
+        <action
+            android:id="@+id/action_itemAddFragment_to_addVendorDialog"
+            app:destination="@id/addVendorDialog" />
+    </fragment>
     <fragment
         android:id="@+id/categoryListFragment"
         android:name="com.kadbyte.client.ui.CategoryListFragment"
@@ -35,4 +38,8 @@
         android:id="@+id/addCategoryDialog"
         android:name="com.kadbyte.client.ui.dialog.AddCategoryDialog"
         android:label="AddCategoryDialog" />
+    <dialog
+        android:id="@+id/addVendorDialog"
+        android:name="com.kadbyte.client.ui.dialog.AddVendorDialog"
+        android:label="AddVendorDialog" />
 </navigation>

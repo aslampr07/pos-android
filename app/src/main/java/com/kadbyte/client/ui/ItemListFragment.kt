@@ -39,6 +39,7 @@ class ItemListFragment : Fragment() {
         model.getItemList()
 
         val view = binding.root;
+        
 
         return view
     }

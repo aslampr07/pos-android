@@ -21,14 +21,12 @@ class ItemAddViewModel @ViewModelInject constructor(
 ) :
     ViewModel() {
 
-    private val TAG = "ItemAddViewModel"
 
     val itemName = MutableLiveData<String>()
     val itemAlias = MutableLiveData<String>()
     val itemPrice = MutableLiveData<String>()
-    val imageList = mutableListOf<ItemImage>()
 
-    fun saveClick() {
+    fun saveClick(isSaveNew: Boolean) {
         val item = itemPrice.value?.toFloat()?.let {
             Item(
                 "", itemName.value.toString(), itemAlias.value.toString(),

@@ -18,7 +18,6 @@ class AddCategoryDialog : DialogFragment() {
 
     private val model: CategoryViewModel by activityViewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +28,7 @@ class AddCategoryDialog : DialogFragment() {
             model.createCategory(categoryNameInput.text.toString())
         }
 
-        model.itemInsertSuccess.observe(viewLifecycleOwner, Observer {isSuccess->
+        model.itemInsertSuccess.observe(viewLifecycleOwner, { isSuccess->
             findNavController().previousBackStackEntry?.savedStateHandle?.set("isDone", isSuccess)
             findNavController().navigateUp()
         })

@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="com.kadbyte.client.viewmodel.ItemAddViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +34,8 @@
                     android:background="@drawable/bg_stroke_round_blue"
                     android:hint="Name"
                     android:inputType="textAutoComplete"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemName}" />
 
                 <EditText
                     android:id="@+id/ItemSellingPriceInput"
@@ -41,7 +45,8 @@
                     android:background="@drawable/bg_stroke_round_blue"
                     android:hint="Selling Price"
                     android:inputType="numberDecimal"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemPrice}" />
 
                 <EditText
                     android:id="@+id/ItemPurchasePriceInput"
@@ -60,10 +65,19 @@
                     android:background="@drawable/bg_stroke_round_blue"
                     android:hint="Alias"
                     android:inputType="text"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:text="@={viewmodel.itemAlias}" />
+
+                <Spinner
+                    android:id="@+id/StoreDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_stroke_round_blue"
+                    android:padding="4dp"
+                    android:layout_marginTop="16dp"
+                    />
 
             </LinearLayout>
-
         </ScrollView>
 
         <Button
@@ -71,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorAccent"
-            android:text="Save"
+            android:onClick="@{(view)->viewmodel.saveClick(false)}"
+            android:text="@string/save"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
 
