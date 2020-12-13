@@ -72,12 +72,27 @@
                     android:id="@+id/StoreDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_stroke_round_blue"
-                    android:padding="4dp"
                     android:layout_marginTop="16dp"
-                    />
+                    android:background="@drawable/bg_stroke_round_blue"
+                    android:padding="4dp" />
+
+                <Button
+                    android:id="@+id/attachImageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_dashed"
+                    android:text="Attach Image"
+                    android:textAllCaps="false"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemImageList"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="16dp" />
 
             </LinearLayout>
+
         </ScrollView>
 
         <Button
