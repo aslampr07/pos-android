@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
 
         //To configure the app bar
         val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.orderListFragment, R.id.itemListFragment, R.id.categoryListFragment),
+            setOf(R.id.orderListFragment, R.id.itemListFragment, R.id.categoryListFragment, R.id.createBarcodeFragment),
             binding.mainDrawer
         )
 

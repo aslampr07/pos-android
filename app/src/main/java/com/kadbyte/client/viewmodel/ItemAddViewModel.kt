@@ -1,5 +1,6 @@
 package com.kadbyte.client.viewmodel
 
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,26 +22,42 @@ class ItemAddViewModel @ViewModelInject constructor(
 ) :
     ViewModel() {
 
-
     val itemName = MutableLiveData<String>()
     val itemAlias = MutableLiveData<String>()
     val itemPrice = MutableLiveData<String>()
+    val imageList: MutableList<String> = ArrayList()
+
+    val aliasError = MutableLiveData<CharSequence?>()
+
 
     fun saveClick(isSaveNew: Boolean) {
+
         val item = itemPrice.value?.toFloat()?.let {
             Item(
                 "", itemName.value.toString(), itemAlias.value.toString(),
-                it, emptyList(), "", "FFFFFF"
+                it, imageList, "", "FFFFFF"
             )
         }
         viewModelScope.launch(IO) {
             if (item != null) {
-                repository.insertItem(item)
+                val insertResult = repository.insertItem(item)
+                if (!insertResult.isSuccessful) {
+                    if (insertResult.error != null) {
+                        for(error in insertResult.error){
+                            Log.v("error", error.code.toString())
+                        }
+                    }
+                }
+                else{
+                    if(isSaveNew){
+
+                    }
+                }
             }
         }
     }
 
-    suspend fun uploadImage(file: File, position: Int): ImageUploadResponse? {
+    suspend fun uploadImage(file: File): ImageUploadResponse? {
         val requestBody = file.asRequestBody()
         val part = MultipartBody.Part.createFormData("picture", file.name, requestBody)
         val response = service.uploadImage(part)

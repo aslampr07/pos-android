@@ -42,4 +42,9 @@
         android:id="@+id/addVendorDialog"
         android:name="com.kadbyte.client.ui.dialogs.AddVendorDialog"
         android:label="AddVendorDialog" />
+    <fragment
+        android:id="@+id/createBarcodeFragment"
+        android:name="com.kadbyte.client.CreateBarcodeFragment"
+        android:label="fragment_create_barcode"
+        tools:layout="@layout/fragment_create_barcode" />
 </navigation>

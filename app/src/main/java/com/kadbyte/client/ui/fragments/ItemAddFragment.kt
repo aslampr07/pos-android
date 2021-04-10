@@ -1,20 +1,13 @@
 package com.kadbyte.client.ui.fragments
 
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.CallSuper
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -36,7 +29,7 @@ class ItemAddFragment : Fragment() {
 
     private val viewModel by viewModels<ItemAddViewModel>()
     private lateinit var file: File
-
+    private var uploadQueueCount = 0;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,15 +63,22 @@ class ItemAddFragment : Fragment() {
             }
         }
 
-        val getContent = registerForActivityResult(ActivityResultContracts.TakePicture()) {
-            adapter.addItem()
-            lifecycleScope.launch {
-                val x = viewModel.uploadImage(file, 0)
-                if (x != null) {
-                    Toast.makeText(requireContext(), x.assetId, Toast.LENGTH_SHORT).show()
+        val getContent =
+            registerForActivityResult(ActivityResultContracts.TakePicture()) { isPhotoSaved ->
+                if (isPhotoSaved) {
+                    adapter.addItem("")
+                    lifecycleScope.launch {
+                        val result = viewModel.uploadImage(file)
+                        if (result != null) {
+                            Toast.makeText(requireContext(), result.assetId, Toast.LENGTH_SHORT)
+                                .show()
+                            viewModel.imageList.add(result.assetId)
+                            adapter.urlList[adapter.urlList.size - 1] = result.assetId
+                            adapter.notifyItemChanged(adapter.urlList.size - 1)
+                        }
+                    }
                 }
             }
-        }
 
         binding.attachImageButton.setOnClickListener {
             // Replace this with new random string generator.
@@ -91,6 +91,10 @@ class ItemAddFragment : Fragment() {
             )
             getContent.launch(photoUri)
         }
+
+        viewModel.aliasError.observe(viewLifecycleOwner, { errorMessage ->
+            binding.aliasInput.error = errorMessage
+        })
 
         return binding.root
     }
